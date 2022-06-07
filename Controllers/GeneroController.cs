@@ -69,5 +69,20 @@ namespace API_Filmes.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("{id}")]
+        public IActionResult AdicionarGeneroEmFilme(int id, [FromBody]AddFilmeDTO filmeDTO){
+            Genero genero = _context.Generos.FirstOrDefault(g=> g.Id == id);
+            if(genero == null){
+                return NotFound();
+            }
+            Filme filme = _context.Filmes.FirstOrDefault(f=>f.Id == filmeDTO.Id);
+            if (filme == null){
+                return NotFound();                
+            }
+            filme.Genero.Add(genero);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }

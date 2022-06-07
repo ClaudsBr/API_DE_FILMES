@@ -14,7 +14,7 @@ namespace API_Filmes.Models
         [Required]
         public string Nome {get;set;}
         public string Nacionalidade {get;set;}        
-        public virtual List<Filme> Trabalhos {get;set;}
+        public virtual List<Filme> Filmes {get;set;}
         
         
     }

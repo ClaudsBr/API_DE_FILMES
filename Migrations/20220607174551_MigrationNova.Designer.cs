@@ -3,14 +3,16 @@ using System;
 using API_Filmes.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_Filmes.Migrations
 {
     [DbContext(typeof(FilmeContext))]
-    partial class FilmeContextModelSnapshot : ModelSnapshot
+    [Migration("20220607174551_MigrationNova")]
+    partial class MigrationNova
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,15 +112,15 @@ namespace API_Filmes.Migrations
 
             modelBuilder.Entity("AtorFilme", b =>
                 {
-                    b.Property<int>("AtoresId")
+                    b.Property<int>("ElencoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("FilmesId")
+                    b.Property<int>("TrabalhosId")
                         .HasColumnType("int");
 
-                    b.HasKey("AtoresId", "FilmesId");
+                    b.HasKey("ElencoId", "TrabalhosId");
 
-                    b.HasIndex("FilmesId");
+                    b.HasIndex("TrabalhosId");
 
                     b.ToTable("AtorFilme");
                 });
@@ -126,7 +128,7 @@ namespace API_Filmes.Migrations
             modelBuilder.Entity("API_Filmes.Models.Filme", b =>
                 {
                     b.HasOne("API_Filmes.Models.Diretor", "Diretor")
-                        .WithMany("Filmes")
+                        .WithMany("Trabalhos")
                         .HasForeignKey("DiretorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -145,20 +147,20 @@ namespace API_Filmes.Migrations
                 {
                     b.HasOne("API_Filmes.Models.Ator", null)
                         .WithMany()
-                        .HasForeignKey("AtoresId")
+                        .HasForeignKey("ElencoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("API_Filmes.Models.Filme", null)
                         .WithMany()
-                        .HasForeignKey("FilmesId")
+                        .HasForeignKey("TrabalhosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("API_Filmes.Models.Diretor", b =>
                 {
-                    b.Navigation("Filmes");
+                    b.Navigation("Trabalhos");
                 });
 
             modelBuilder.Entity("API_Filmes.Models.Filme", b =>

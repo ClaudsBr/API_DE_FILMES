@@ -25,11 +25,14 @@ namespace API_Filmes.Controllers
         [HttpPost]
         public IActionResult AddFilme([FromBody] CreateFilmeDTO filmeDTO)
         {
+            
 
             Filme filme = _mapper.Map<Filme>(filmeDTO);
             
             
            _context.Filmes.Add(filme);
+           
+            filme.RatingIMDB = Math.Round(filmeDTO.RatingIMDB,1);
            _context.SaveChanges();
             //Mostra alem do status da requisição aonde este recurso foi criado
             return CreatedAtAction(nameof(ReturnFilmeByID), new {Id = filme.Id}, filme);         

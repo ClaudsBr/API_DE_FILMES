@@ -18,19 +18,22 @@ namespace API_Filmes.Models
         
         public string TituloOriginal {get;set;}
         
-        public string Nacionalidade {get;set;}
+        public string Pais {get;set;}
         [JsonIgnore]
         public virtual Diretor Diretor { get; set; }
         public int DiretorId {get;set;}
         [Required(ErrorMessage = "O Ano do filme é Obrigatório")]
         public int Ano {get;set;}
-        [Required(ErrorMessage = "O campo Gênero é Obrigatório")]
         
+        [JsonIgnore]
         public virtual List<Genero> Genero { get; set; }
+        
         [Range(30, 300, ErrorMessage = "O campo de Duração do Filme deve estar entre 30 e 300 minutos")]        
         public int DuracaoMinutos { get; set; }  
-        public decimal RatingIMDB {get;set;}  
-        public virtual List<Ator> Elenco {get;set;} 
+        [Range (0.0, 10.0)]
+        public decimal RatingIMDB {get;set;} 
+        [JsonIgnore] 
+        public virtual List<Ator> Atores {get;set;} 
         
         
         

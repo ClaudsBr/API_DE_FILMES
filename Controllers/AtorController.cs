@@ -71,5 +71,20 @@ namespace API_Filmes.Controllers
             _context.SaveChanges();
             return NoContent();
         }
+
+        [HttpPost("{id}")]
+        public IActionResult AdicionarFilmes(int id, [FromBody] AddFilmeDTO  filmeDTO){
+            Ator ator = _context.Atores.FirstOrDefault(a=>a.Id == id);
+            if (ator == null){
+                return NotFound();
+            }
+            Filme filme = _context.Filmes.FirstOrDefault(f=>f.Id == filmeDTO.Id);
+            if(filme == null){
+                return NotFound();
+            }
+            ator.Filmes.Add(filme);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }
