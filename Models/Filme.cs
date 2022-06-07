@@ -14,17 +14,21 @@ namespace API_Filmes.Models
         public int Id {get;set;}
         [Required(ErrorMessage = "O campo Título é Obrigatório")]
         public string Titulo {get;set;}
-        // public string TituloOriginal {get;set;}
+        
+        public string TituloOriginal {get;set;}
+        
+        public string Nacionalidade {get;set;}
         [Required(ErrorMessage = "O campo Diretor é Obrigatório")]
-        public string Diretor { get; set; }
+        public Diretor Diretor { get; set; }
+        public int DiretorId {get;set;}
         [Required(ErrorMessage = "O Ano do filme é Obrigatório")]
         public int Ano {get;set;}
         [Required(ErrorMessage = "O campo Gênero é Obrigatório")]
         public string Genero { get; set; }
-        [Range(30, 300, ErrorMessage = "O campo Duração deve estar entre 30 e 300 minutos")]        
+        [Range(30, 300, ErrorMessage = "O campo de Duração do Filme deve estar entre 30 e 300 minutos")]        
         public int DuracaoMinutos { get; set; }  
-        //public decimal RatingIMDB {get;set;}  
-        //public List<Ator> Elenco {get;set;} 
+        public decimal RatingIMDB {get;set;}  
+        public List<Ator> Elenco {get;set;} 
         
         
         

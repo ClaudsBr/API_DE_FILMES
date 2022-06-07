@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj": {}
+    "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj": {}
   },
   "projects": {
-    "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj": {
+    "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
+        "projectUniqueName": "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
         "projectName": "API_Filmes",
-        "projectPath": "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
+        "projectPath": "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
         "packagesPath": "C:\\Users\\coot\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\obj\\",
+        "outputPath": "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\coot\\AppData\\Roaming\\NuGet\\NuGet.Config"

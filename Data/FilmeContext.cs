@@ -12,5 +12,7 @@ namespace API_Filmes.Data
         public FilmeContext(DbContextOptions<FilmeContext> options) : base(options){}
 
         public DbSet<Filme> Filmes {get;set;}
+        public DbSet<Ator> Atores {get;set;}
+        public DbSet<Diretor> Diretores {get;set;}
     }
 }

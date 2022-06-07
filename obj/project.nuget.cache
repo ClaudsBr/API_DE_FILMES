@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uo43hsR+nZJafXJXkX1rTKXjRV9s69l5XQ4SzEmAlfqkPENhpYznKWungwG9gB6U9tMTx5bEwdnJKz/Ar43gZg==",
+  "dgSpecHash": "eyvJ72z0Yun19sExBA3JjjWJnmLOTMsg0VqzIY+Pu8N5gh5tZ/p7WnIEiX0hqomSZwcmKi9/o6EYXPQ+F3TH1g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
+  "projectFilePath": "C:\\Users\\coot\\OneDrive - GFT Technologies SE\\Documents\\API_Filmes\\API_Filmes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\coot\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\coot\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

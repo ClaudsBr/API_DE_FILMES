@@ -55,7 +55,7 @@ namespace API_Filmes.Controllers
             return NotFound();
         }
 
-        [HttpGet("diretor/{diretor}")]
+        /*[HttpGet("diretor/{diretor}")]
         public IActionResult ReturnFilmeByDirector(string diretor){
             List<Filme> filmesDiretor = new List<Filme>();
             foreach (Filme filme in _context.Filmes)
@@ -83,7 +83,7 @@ namespace API_Filmes.Controllers
                 return Ok(filmesDesseAno);
             }
             return NotFound();
-        }
+        }*/
 
         [HttpDelete("{id}")]
         public IActionResult DeleteFilme(int id){
