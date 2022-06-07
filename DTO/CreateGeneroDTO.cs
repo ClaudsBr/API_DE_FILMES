@@ -3,12 +3,9 @@ using System;
 
 namespace API_Filmes.DTO
 {
-    public class CreateAtorDTO
+    public class CreateGeneroDTO
     {
         [Required]
         public string Nome {get;set;}
-        public string Nacionalidade {get;set;}
-        
-
     }
 }

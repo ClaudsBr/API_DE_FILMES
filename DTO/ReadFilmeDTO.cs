@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
+using API_Filmes.Models;
 
 namespace API_Filmes.DTO
 {
@@ -11,9 +13,8 @@ namespace API_Filmes.DTO
         [Required(ErrorMessage = "O campo Título é Obrigatório")]
         public string Titulo {get;set;}
         public string TituloOriginal {get;set;}
-        public string Nacionalidade {get;set;}
-        [Required(ErrorMessage = "O campo Diretor é Obrigatório")]
-        public string Diretor { get; set; }
+        public string Nacionalidade {get;set;}        
+        public Diretor Diretor { get; set; }
         [Required(ErrorMessage = "O Ano do filme é Obrigatório")]
         public int Ano {get;set;}
         [Required(ErrorMessage = "O campo Gênero é Obrigatório")]
@@ -22,6 +23,7 @@ namespace API_Filmes.DTO
         public int DuracaoMinutos { get; set; }  
         public DateTime HoraConsulta {get;set;}
         public decimal RatingIMDB {get;set;}
+        public List<Ator> Elenco {get;set;}
 
         public ReadFilmeDTO(){
             HoraConsulta = DateTime.Now;

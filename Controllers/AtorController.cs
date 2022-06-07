@@ -11,6 +11,8 @@ using AutoMapper;
 
 namespace API_Filmes.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class AtorController: ControllerBase
     {
         private FilmeContext _context;
@@ -34,7 +36,7 @@ namespace API_Filmes.Controllers
             return Ok(_context.Atores);
         }
 
-        [HttpGet("{{id}")]
+        [HttpGet("{id}")]
         public IActionResult ReturnAtorByID(int id){
             Ator ator = _context.Atores.FirstOrDefault(a=>a.Id == id);
             if( ator != null){

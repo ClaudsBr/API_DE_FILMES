@@ -10,6 +10,8 @@ using AutoMapper;
 
 namespace API_Filmes.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class DiretorController: ControllerBase
     {
         private FilmeContext _context;
@@ -33,7 +35,7 @@ namespace API_Filmes.Controllers
             return Ok(_context.Atores);
         }
 
-        [HttpGet("{{id}")]
+        [HttpGet("{id}")]
         public IActionResult ReturnDiretorByID(int id){
             Diretor diretor = _context.Diretores.FirstOrDefault(d=>d.Id == id);
             if( diretor != null){

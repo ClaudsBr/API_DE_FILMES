@@ -9,7 +9,7 @@ namespace API_Filmes.DTO
         public string TituloOriginal {get;set;}
         public string Nacionalidade {get;set;}
         [Required(ErrorMessage = "O campo Diretor é Obrigatório")]
-        public string Diretor { get; set; }
+        public int DiretorId { get; set; }
         [Required(ErrorMessage = "O Ano do filme é Obrigatório")]
         public int Ano {get;set;}
         [Required(ErrorMessage = "O campo Gênero é Obrigatório")]

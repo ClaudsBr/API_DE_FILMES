@@ -31,7 +31,7 @@ namespace API_Filmes
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<FilmeContext>(options =>
-                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+                options.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
@@ -53,11 +53,14 @@ namespace API_Filmes
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API_Filmes v1"));
             }
 
+            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

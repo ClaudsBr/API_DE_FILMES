@@ -13,9 +13,8 @@ namespace API_Filmes.Models
         public int Id{get;set;}
         [Required]
         public string Nome {get;set;}
-        public string Nacionalidade {get;set;}
-        public DateTime DataNascimento { get; set; }
-        public List<Filme> Trabalhos {get;set;}
+        public string Nacionalidade {get;set;}        
+        public virtual List<Filme> Trabalhos {get;set;}
         
         
     }

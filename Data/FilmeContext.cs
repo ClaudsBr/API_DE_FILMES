@@ -11,8 +11,15 @@ namespace API_Filmes.Data
     {
         public FilmeContext(DbContextOptions<FilmeContext> options) : base(options){}
 
+        protected override void OnModelCreating(ModelBuilder builder){
+            builder.Entity<Filme>().HasOne(filme => filme.Diretor).WithMany(diretor => diretor.Trabalhos);
+            builder.Entity<Filme>().HasMany(filme => filme.Genero);
+
+        }
+
         public DbSet<Filme> Filmes {get;set;}
         public DbSet<Ator> Atores {get;set;}
         public DbSet<Diretor> Diretores {get;set;}
+        public DbSet<Genero> Generos {get;set;}
     }
 }

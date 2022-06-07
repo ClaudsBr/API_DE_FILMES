@@ -10,7 +10,7 @@ namespace API_Filmes.DTO
         [Required]
         public string Nome {get;set;}
         public string Nacionalidade {get;set;}
-        public DateTime DataNascimento { get; set; }
+        
         public List<Filme> Trabalhos {get;set;}
     }
 }
