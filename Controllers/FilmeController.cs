@@ -125,6 +125,23 @@ namespace API_Filmes.Controllers
                 return NotFound("Ator não Encontrado");
             }
             filme.Atores.Add(ator);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpPost("adicionar/genero/{id}")]
+        public IActionResult AdicionandoGeneros(int id, [FromBody] AddFilmeDTO filmeDTO)
+        {
+            Filme filme = _context.Filmes.FirstOrDefault(f=> f.Id == filmeDTO.Id);
+            if(filme == null){
+                return NotFound("Filme não encontrado");
+            }
+            Genero genero = _context.Generos.FirstOrDefault(g=>g.Id == id);
+            if (genero == null){
+                return NotFound("Genero não encontrado");
+            }
+            filme.Genero.Add(genero);
+            _context.SaveChanges();
             return NoContent();
         }
     }

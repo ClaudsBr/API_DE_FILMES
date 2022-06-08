@@ -72,7 +72,7 @@ namespace API_Filmes.Controllers
             return NoContent();
         }
 
-        [HttpPost("{id}")]
+        [HttpPost("Adicionar/Filme/{id}")]
         public IActionResult AdicionarFilmes(int id, [FromBody] AddFilmeDTO  filmeDTO){
             Ator ator = _context.Atores.FirstOrDefault(a=>a.Id == id);
             if (ator == null){
