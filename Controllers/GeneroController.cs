@@ -70,7 +70,7 @@ namespace API_Filmes.Controllers
             return NoContent();
         }
 
-        [HttpPost("{id}")]
+        [HttpPost("adicionar/{id}")]
         public IActionResult AdicionarGeneroEmFilme(int id, [FromBody]AddFilmeDTO filmeDTO){
             Genero genero = _context.Generos.FirstOrDefault(g=> g.Id == id);
             if(genero == null){

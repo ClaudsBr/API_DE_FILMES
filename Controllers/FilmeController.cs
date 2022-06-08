@@ -113,5 +113,19 @@ namespace API_Filmes.Controllers
 
            return NoContent();
         }
+
+        [HttpPost("adicionar/ator/{id}")]
+        public IActionResult FormandoElenco(int id, [FromBody] AddFilmeDTO filmeDTO){
+            Filme filme = _context.Filmes.FirstOrDefault(f=>f.Id == filmeDTO.Id);
+            if(filme == null){
+                return NotFound("Filme não encontrado");
+            }
+            Ator ator = _context.Atores.FirstOrDefault(a=>a.Id == id);
+            if(ator == null){
+                return NotFound("Ator não Encontrado");
+            }
+            filme.Atores.Add(ator);
+            return NoContent();
+        }
     }
 }

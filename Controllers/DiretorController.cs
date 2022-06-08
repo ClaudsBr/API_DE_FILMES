@@ -31,8 +31,8 @@ namespace API_Filmes.Controllers
         }
 
         [HttpGet]
-        public IActionResult ListAtor(){
-            return Ok(_context.Atores);
+        public IActionResult ListDiretor(){
+            return Ok(_context.Diretores);
         }
 
         [HttpGet("{id}")]
@@ -69,6 +69,23 @@ namespace API_Filmes.Controllers
             _context.Diretores.Remove(diretor);
             _context.SaveChanges();
             return NoContent();
+        }
+
+        [HttpPost("adicionar/filme/{id}")]
+        public IActionResult AdicionarFilme(int id, [FromBody] AddFilmeDTO filmeDTO){
+            Diretor diretor = _context.Diretores.FirstOrDefault(d=>d.Id == id);
+            if (diretor == null){
+                return NotFound("Diretor Não Encontrado");
+            }
+            Filme filme = _context.Filmes.FirstOrDefault(f=>f.Id == filmeDTO.Id);
+            if(filme == null){
+                return NotFound("Filme não encontrado");
+
+            }
+            diretor.Filmes.Add(filme);
+            return NoContent();
+
+            
         }
     }
 }
