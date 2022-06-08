@@ -13,7 +13,9 @@ namespace API_Filmes.Profiles
         public FilmeProfile()
             {
                 CreateMap<CreateFilmeDTO, Filme>();
-                CreateMap<Filme, ReadFilmeDTO>();
+                CreateMap<Filme, ReadFilmeDTO>().ForMember(filme => filme.Atores, option => option
+                .MapFrom(f => f.Atores.Select(a=> new {a.Nome})))
+                .ForMember(filme => filme.Genero, option => option.MapFrom(f => f.Genero.Select(g=> new {g.Nome})));                
                 CreateMap<UpdateFilmeDTO, Filme>();
                 
             }

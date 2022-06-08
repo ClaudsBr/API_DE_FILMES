@@ -13,7 +13,9 @@ namespace API_Filmes.Profiles
         public DiretorProfile ()
         {
             CreateMap<CreateDiretorDTO, Diretor>();
-            CreateMap<Diretor, ReadDiretorDTO>();
+            CreateMap<Diretor, ReadDiretorDTO>().ForMember(diretor => diretor.Filmes, option => option
+                .MapFrom(d => d.Filmes.Select(f=> new {f.Titulo})));
+                
             CreateMap<UpdateDiretorDTO, Diretor>();
         }
     }

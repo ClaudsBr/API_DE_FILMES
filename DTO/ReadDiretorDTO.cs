@@ -14,7 +14,7 @@ namespace API_Filmes.DTO
         public string Nome {get;set;}
         public string Nacionalidade {get;set;}
         
-        public List<Filme> Trabalhos {get;set;}
+        public object Filmes {get;set;}
         public DateTime HoraConsulta {get;set;}
 
         public ReadDiretorDTO(){
