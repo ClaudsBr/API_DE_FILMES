@@ -12,7 +12,7 @@ namespace API_Filmes.Data
         public FilmeContext(DbContextOptions<FilmeContext> options) : base(options){}
 
         protected override void OnModelCreating(ModelBuilder builder){
-            builder.Entity<Filme>().HasOne(filme => filme.Diretor).WithMany(diretor => diretor.Filmes);
+            builder.Entity<Filme>().HasOne(filme => filme.Diretor).WithMany(diretor => diretor.Filmes).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Filme>().HasMany(filme => filme.Genero);
             builder.Entity<Filme>().HasMany(filme => filme.Atores);
             builder.Entity<Diretor>().HasMany(diretor => diretor.Filmes);
